@@ -1,0 +1,6 @@
+Revision history for Perl extension Kgc::Client::Gtk3GUI.
+
+0.01  Wed Nov 11 14:16:46 2015
+	- original version; created by h2xs 1.23 with options
+		-XAn Kgc::Client::Gtk3GUI
+

@@ -1,0 +1,6 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Kgc-Client-Gtk3GUI.t
+lib/Kgc/Client/Gtk3GUI.pm

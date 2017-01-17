@@ -1,0 +1,32 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use Kgc::Client::Gtk3GUI;
+
+# make sure files we create are private
+umask(077);
+
+
+sub check_directories{
+	my $homefp = $ENV{'HOME'};
+	if($homefp =~ m/(\/home\/[0-9a-zA-Z]+)/){
+		$homefp = $1;
+	}
+	my $kyub_fp = $homefp.'/.kyub';
+	unless(-d $kyub_fp){
+		mkdir($kyub_fp);
+	}
+	return $kyub_fp;
+}
+
+#chdir(Kgc::Client::Gtk3GUI::module_directory());
+warn "Dir=".Kgc::Client::Gtk3GUI::module_directory()."\n";
+my $app = Kgc::Client::Gtk3GUI->new(
+	Kgc::Client::Gtk3GUI::module_directory(),
+	check_directories()
+);
+$app->loop();
+
+
